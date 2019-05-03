@@ -25,6 +25,9 @@ class LoginController extends Controller
      *
      * @var string
      */
+    public function username() {
+        return 'username';
+    }
     protected $redirectTo = '/home';
 
     /**
@@ -36,4 +39,5 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
 }
