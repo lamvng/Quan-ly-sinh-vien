@@ -14,7 +14,7 @@
 			</a>
 		</div>
 		<div class="dropdown">
-			<a href="admin\qltkcn\xemtkcn">
+			<a href="admin\qltkcn\xemtkcn\{{Auth::user()->username}}">
 				<button class="text-block">Quản lý tài khoản cá nhân</button>
 			</a>
 		</div>

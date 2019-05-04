@@ -3,43 +3,46 @@
 <div class="suatkcn-container">
 	<p class="title">Sửa tài khoản cá nhân</p>
 	<p class="label">Thông tin tài khoản</p>
-	<form action="admin\qltkcn\suatkcn" method="POST">
+	<form action="admin\qltkcn\suatkcn\{{$user->username}}" method="POST">
+		<input type="hidden" name="_token" value ="{{csrf_token()}}">
 		<div class="user-infor">
 			<div class="field-block">
 				<img src="frontend\image\avatar.png" height="204" class="infor-image">
-				<p>MaCB : </p>
-				<p> 20151950</p>
 			</div>
 			<div class="field-block-1">
 				<div class="text-field">
 					<p>Họ và tên :</p>
-					<input type="text" value="Nguyễn An Khang" name="">
+					<input type="text" value ="{{$user->hoTen}}" name="hoTen" readonly="readonly">
 				</div>
 				<div class="text-field">
-					<p>Mật khẩu cũ :</p>
-					<input type="password">
+					<p>Tên tài khoản :</p>
+					<input type="text" value="{{$user->username}}" name="username" readonly="readonly">
 				</div>
 				<div class="text-field">
-					<p>Mật khẩu mới:</p>
-					<input type="password">
+					<p>Email :</p>
+					<input type="text" value="{{$user->email}}" name="email">
 				</div>
 				<div class="text-field">
-					<p>Nhập lại :</p>
-					<input type="text" name="">
+					<p>SĐT :</p>
+					<input type="text" value="{{$user->sdt}}" name="sdt">
 				</div>
 			</div>
 			<div class="field-block-1">
 				<div class="text-field">
 					<p>Giới tính :</p>
-					<input type="text" value="Nam" name="">
+					<input type="text" value="{{$user->gioiTinh}}" name="gioiTinh">
 				</div>
 				<div class="text-field">
-					<p>Email :</p>
-					<input type="password">
+					<p>Chức vụ :</p>
+					<input type="text" value="{{$user->chucVu}}" name="chucVu" readonly="readonly">
 				</div>
 				<div class="text-field">
-					<p>SĐT :</p>
-					<input type="text" name="">
+					<p>Mật khẩu mới:</p>
+					<input type="password" value="" name="password">
+				</div>
+				<div class="text-field">
+					<p>Nhập lại MK :</p>
+					<input type="password" value="" name="passwordagain">
 				</div>
 			</div>
 		</div>

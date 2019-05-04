@@ -4,32 +4,40 @@
 	<p class="title">Tìm kiếm tài khoản </p>
 	<div class="div-search">
 		<form action="admin\qltk\timkiemtk" method="POST">
-			<input type="text" placeholder="Nhập từ khoá" name="">
-			<select >
-				<option value="MSSV">Mã Số</option>
-				<option value="Ten">Họ Tên</option>
-				<option value="Lop">Tên TK</option>
+			<input type="hidden" name="_token" value ="{{csrf_token()}}">
+			<input type="text" placeholder="Nhập từ khoá" name="tukhoa">
+			<select name="tieuchi">
+				<option value="username">Tên TK</option>
+				<option value="hoTen">Họ Tên</option>
 			</select>
-			<button type="submit">Tìm</button>
+			<button type="submit" name="submit">Tìm</button>
 		</form>
 	</div>
+	@if(!empty($_POST))
 	<table class="result-table">
 		<thead>
 			<tr>
 				<th>Họ và tên</th>
-				<th>Mã số</th>
 				<th>Tên TK</th>
-				<th>Chức vụ</th>
+				<th>Chức Vụ</th>
+				<th>Giới Tính</th>
+				<th>Xem</th>
 			</tr>
 		</thead>
 		<tbody class="element">
-			<tr>
-				<td>Nguyễn An Khang</td>
-				<td>20151950</td>
-				<td>KSCLC</td>
-				<td>K60</td>
-			</tr>
+			@foreach($taikhoan as $tk) 
+				<tr>
+					<td>{{$tk->hoTen}}</td>
+					<td>{{$tk->username}}</td>
+					<td>{{$tk->chucVu}}</td>
+					<td>{{$tk->gioiTinh}}</td>
+					<td>
+						<a href="admin\qltk\xemtk\{{$tk->username}}"><img src="frontend\image\view.png" style="height: : 35px;width: 25px;"></a> 
+					</td>
+				</tr>
+			@endforeach
 		</tbody>
 	</table>
+	@endif
 </div>
 @endsection

@@ -6,39 +6,37 @@
 	<div class="user-infor">
 		<div class="field-block">
 			<img src="Frontend\Image\avatar.png" height="204" class="infor-image">
-			<p>MaCB : </p>
-			<p> 20151950</p>
 		</div>
 		<div class="field-block-1">
 			<div class="text-field">
 				<p>Họ và tên :</p>
-				<p>Nguyễn An Khang</p>
+				<p>{{$user->hoTen}}</p>
 			</div>
 			<div class="text-field">
 				<p>Tên tài khoản :</p>
-				<p>khangna.1505</p>
+				<p>{{$user->username}}</p>
 			</div>
 			<div class="text-field">
 				<p>Chức vụ :</p>
-				<p>Cán bộ</p>
+				<p>{{$user->chucVu}}</p>
 			</div>
 		</div>
 		<div class="field-block-1">
 			<div class="text-field">
 				<p>Giới tính :</p>
-				<p>Nguyễn An Khang</p>
+				<p>{{$user->gioiTinh}}</p>
 			</div>
 			<div class="text-field">
 				<p>Email :</p>
-				<p>khangna.1505</p>
+				<p>{{$user->email}}</p>
 			</div>
 			<div class="text-field">
 				<p>SĐT :</p>
-				<p>Cán bộ</p>
+				<p>{{$user->sdt}}</p>
 			</div>
 		</div>
 	</div>
-	<a href="admin\qltkcn\suatkcn">
+	<a href="admin\qltkcn\suatkcn\{{$user->username}}">
 		<button type="submit" class="edit-button">Sửa</button>
 	</a>
 </div>

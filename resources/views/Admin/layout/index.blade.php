@@ -8,10 +8,10 @@
 
 	<link rel="stylesheet" type="text/css" href="frontend\admin\qltk\them_tk.css">
 	<link rel="stylesheet" type="text/css" href="frontend\admin\qltk\sua_tk.css">
-	<link rel="stylesheet" type="text/css" href="frontend\admin\qltk\timkiem_tk.css">
-	<link rel="stylesheet" type="text/css" href="frontend\admin\qltk\xem_tk.css">
+	<link rel="stylesheet" type="text/css" href="frontend\admin\qltk\timkiemtk.css">
+	<link rel="stylesheet" type="text/css" href="frontend\admin\qltk\xemtk.css">
 
-	<link rel="stylesheet" type="text/css" href="frontend\admin\qltkcn\sua_tkcn.css">
+	<link rel="stylesheet" type="text/css" href="frontend\admin\qltkcn\suatkcn.css">
 	<link rel="stylesheet" type="text/css" href="frontend\admin\qltkcn\xem_tkcn.css">
 
 

@@ -10,30 +10,39 @@
 		<div class="field-block-1">
 			<div class="text-field">
 				<p>Họ và tên :</p>
-				<p>Nguyễn An Khang</p>
+				<p>{{$user->hoTen}}</p>
 			</div>
 			<div class="text-field">
-				<p>Tên TK :</p>
-				<p>Đại học</p>
+				<p>Tên tài khoản :</p>
+				<p>{{$user->username}}</p>
+			</div>
+			<div class="text-field">
+				<p>Email :</p>
+				<p>{{$user->email}}</p>
 			</div>
 		</div>
 		<div class="field-block-1">
 			<div class="text-field">
-				<p>Mã số :</p>
-				<p>Nam</p>
+				<p>Giới tính :</p>
+				<p>{{$user->gioiTinh}}</p>
 			</div>
 			<div class="text-field">
 				<p>Chức vụ :</p>
-				<p>HTTT&TT</p>
+				<p>{{$user->chucVu}}</p>
+			</div>
+			<div class="text-field">
+				<p>SĐT :</p>
+				<p>{{$user->sdt}}</p>
 			</div>
 		</div>
 	</div>
 	<div class="button">
-		<a href="admin\qltk\suatk"> 
+		<a href="admin\qltk\suatk\{{$user->username}}"> 
 			<button type="submit" class="edit-button">Sửa</button>
 		</a>
-		<form action="admin\qltk\xoatk">
-			<button type="submit" class="del-button">Xoá</button>
+		<form action="admin\qltk\xoatk\{{$user->username}}">
+			<button type="submit" class="del-button" onclick="javascript: return confirm('Xác nhận');" 
+			href="">Xoá</button>
 		</form>
 	</div>
 	<div style="clear:both"></div>
