@@ -19,15 +19,9 @@ Route::group(['middleware' => 'web'], function () {
 	Route::get('dangnhap','TaiKhoanController@getDangNhap');
 	Route::post('dangnhap','TaiKhoanController@postDangNhap');
 
-	Route::get('canbo/dangnhap','TaiKhoanController@getDangNhap');
-	Route::post('canbo/dangnhap','TaiKhoanController@postDangNhap');
-
-	Route::get('sinhvien/dangnhap','TaiKhoanController@getDangNhap');
-	Route::post('sinhvien/dangnhap','TaiKhoanController@postDangNhap');
-
 	Route::get('dangxuat','TaiKhoanController@getDangXuat');
 
-	Route::group(['prefix'=>'admin','middleware'=>'login'], function() {
+	Route::group(['prefix'=>'admin','middleware'=>'adminLogin'], function() {
 		Route::get('home', function() {
 			return view('admin.home');
 		});
@@ -38,45 +32,45 @@ Route::group(['middleware' => 'web'], function () {
 			Route::get('timkiemtk','TaiKhoanController@getTimkiemTK');
 			Route::post('timkiemtk','TaiKhoanController@postTimkiemTK');
 
-			Route::get('xemtk','TaiKhoanController@getXemTK');
+			Route::get('xemtk/{username}','TaiKhoanController@getXemTK');
 
-			Route::get('suatk','TaiKhoanController@getSuaTK');
-			Route::post('suatk','TaiKhoanController@postSuaTK');
+			Route::get('suatk/{username}','TaiKhoanController@getSuaTK');
+			Route::post('suatk/{username}','TaiKhoanController@postSuaTK');
 
-			Route::get('xoatk','TaiKhoanController@getXoaTK');
-			Route::post('xoatk','TaiKhoanController@postXoaTK');
+			Route::get('xoatk/{username}','TaiKhoanController@getXoaTK');
+			
 		});
 
 		Route::get('qlddk','DangKyController@getQLDDK');
 		Route::post('qlddk','DangKyController@postQLDDK');
 
 		Route::group(['prefix'=>'qltkcn'], function() {
-			Route::get('xemtk','TaiKhoanController@getXemTKCN');
+			Route::get('xemtkcn/{username}','TaiKhoanController@getXemTKCN');
 
-			Route::get('suatk','TaiKhoanController@getSuaTKCN');
-			Route::post('suatk','TaiKhoanController@postSuaTKCN');
+			Route::get('suatkcn/{username}','TaiKhoanController@getSuaTKCN');
+			Route::post('suatkcn/{username}','TaiKhoanController@postSuaTKCN');
 		});
 
 	});
 
-	Route::group(['prefix'=>'canbo','middleware'=>'login'], function() {
+	Route::group(['prefix'=>'canbo','middleware'=>'canboLogin'], function() {
 		Route::get('home', function() {
 			return view('canbo.home');
 		});
 		Route::group(['prefix'=>'qlhssv'], function() {
-			Route::get('themhs','HoSoController@getThemHS');
-			Route::post('themhs','HoSoController@postThemHS');
+			Route::get('themhs','SinhVienController@getThemHS');
+			Route::post('themhs','SinhVienController@postThemHS');
 
 			Route::get('timkiemsv','SinhVienController@getTimkiemSV');
 			Route::post('timkiemsv','SinhVienController@postTimkiemSV');
 
-			Route::get('xemhs','HoSoController@getXemHS');
+			Route::get('xemhs','SinhVienController@getXemHS');
 			
-			Route::get('suahs','HoSoController@getSuaHS');
-			Route::post('suahs','HoSoController@postSuaHS');
+			Route::get('suahs','SinhVienController@getSuaHS');
+			Route::post('suahs','SinhVienController@postSuaHS');
 
-			Route::get('xoahs','HoSoController@getXoaHS');
-			Route::post('xoahs','HoSoController@postXoaHS');
+			Route::get('xoahs','SinhVienController@getXoaHS');
+			Route::post('xoahs','SinhVienController@postXoaHS');
 		});
 
 		Route::group(['prefix'=>'qld'], function() {
@@ -84,20 +78,20 @@ Route::group(['middleware' => 'web'], function () {
 				Route::get('timkiemsv','SinhVienController@getTimkiemSV');
 				Route::post('timkiemsv','SinhVienController@postTimkiemSV');
 
-				Route::get('xemdiemsv','DiemController@getXemDiemSV');
+				Route::get('xemdiemsv','SinhVienController@getXemDiemSV');
 
-				Route::get('suadiem','DiemController@getSuaDiem');
-				Route::post('suadiem','DiemController@postSuaDiem');
+				Route::get('suadiem','SinhVienController@getSuaDiem');
+				Route::post('suadiem','SinhVienController@postSuaDiem');
 
 			});
 			Route::group(['prefix'=>'lop'], function() {
 				Route::get('timkiemlop','LopController@getTimkiemLop');
 				Route::post('timkiemlop','LopController@postTimkiemLop');
 
-				Route::get('xemdiemlop','DiemController@getXemDiemLop');
+				Route::get('xemdiemlop','LopController@getXemDiemLop');
 
-				Route::get('nhapdiem','DiemController@getNhapDiem');
-				Route::post('nhapdiem','DiemController@postNhapDiem');
+				Route::get('nhapdiem','LopController@getNhapDiem');
+				Route::post('nhapdiem','LopController@postNhapDiem');
 
 			});
 		});
@@ -126,20 +120,20 @@ Route::group(['middleware' => 'web'], function () {
 		});
 	});
 
-	Route::group(['prefix'=>'sinhvien','middleware'=>'login'], function() {
+	Route::group(['prefix'=>'sinhvien','middleware'=>'sinhvienLogin'], function() {
 
 		Route::get('home', function() {
 			return view('sinhvien.home');
 		});
 
 		Route::group(['prefix'=>'qlhscn'], function() {
-			Route::get('xemhscn','HoSoController@getXemHSCN');
+			Route::get('xemhscn','SinhVienController@getXemHSCN');
 
-			Route::get('suahscn','HoSoController@getSuaHSCN');
-			Route::post('suahscn','HoSoController@postSuaHSCN');
+			Route::get('suahscn','SinhVienController@getSuaHSCN');
+			Route::post('suahscn','SinhVienController@postSuaHSCN');
 		});
 
-		Route::get('xemdiem','DiemController@getXemDiem');
+		Route::get('xemdiem','SinhVienController@getXemDiem');
 
 		Route::group(['prefix'=>'qldkl'], function() {
 
