@@ -8,4 +8,8 @@ class HocKy extends Model
 {
     protected $table = 'hocky';
     public $timestamps = false;
+
+    public function lophoc() {
+    	return $this->hasMany('App\LopHoc','maHocKy','maLop');
+    }
 }

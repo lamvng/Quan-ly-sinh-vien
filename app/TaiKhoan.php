@@ -17,4 +17,8 @@ class TaiKhoan extends Authenticatable
     protected $fillable = [
          'hoTen', 'username', 'password'
     ];
+
+    public function sinhvien() {
+    	return $this->belongsTo('App\SinhVien','username','username');
+    }
 }
