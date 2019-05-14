@@ -22,7 +22,7 @@ class TaiKhoanController extends Controller
                 'gioiTinh' => 'required',
                 'email' => 'required|email',
                 'sdt' => 'required'
-    		], 
+    		],
     		[
     			'hoTen.required' => 'Bạn chưa nhập họ tên',
                 'username.required' => 'Bạn chưa nhập tên tài khoản',
@@ -46,7 +46,7 @@ class TaiKhoanController extends Controller
     	$taikhoan->email = $request->email;
     	$taikhoan->chucVu = $request->chucVu;
     	$taikhoan->sdt = $request->sdt;
-
+    
     	$taikhoan->save();
 
     	return redirect('admin/qltk/themtk')->with('thongbao','Thêm thành công');
