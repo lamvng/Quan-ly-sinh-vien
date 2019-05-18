@@ -16,4 +16,8 @@ class LopSV extends Model
     public function ctdaotao() {
     	return $this->belongsTo('App\CTDaoTao','maCT','maCT');
     }
+
+    public function vien() {
+    	return $this->belongsTo('App\Vien','maVien','maVien');
+    }
 }

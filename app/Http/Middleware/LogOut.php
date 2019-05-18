@@ -3,10 +3,9 @@
 namespace App\Http\Middleware;
 use Illuminate\Support\Facades\Auth;
 
-
 use Closure;
 
-class AdminLoginMiddleware
+class LogOut
 {
     /**
      * Handle an incoming request.
@@ -17,16 +16,10 @@ class AdminLoginMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if(Auth::check()) {
-            if(Auth::user()->chucVu == 2) {
-                return $next($request);   
-            }
-            else {
-                return back();
-            }
-        }
-        else {
-            return redirect('dangnhap');
+        if(!Auth::check()) {
+             return $next($request);
+        } else {
+            return back();
         }
     }
 }

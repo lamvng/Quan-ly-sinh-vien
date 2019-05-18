@@ -23,4 +23,8 @@ class LopHoc extends Model
     	return $this->hasOne('App\HocPhan','maHocPhan','maHocPhan');
     }
 
+    public function lichhoc() {
+        return $this->hasMany('App\LichHoc','maLop','maLop');
+    }
+
 }

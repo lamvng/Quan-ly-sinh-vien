@@ -12,4 +12,7 @@ class ThongTinHocTap extends Model
     public function sinhvien() {
     	return $this->belongsTo('App\SinhVien','maSV','maSV');
     }
+
+
+
 }

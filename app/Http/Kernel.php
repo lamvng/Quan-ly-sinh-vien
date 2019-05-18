@@ -62,7 +62,8 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'adminLogin' => \App\Http\Middleware\AdminLoginMiddleware::class,
         'canboLogin' => \App\Http\Middleware\CanboLoginMiddleware::class,
-        'sinhvienLogin' => \App\Http\Middleware\SinhvienLoginMiddleware::class
+        'sinhvienLogin' => \App\Http\Middleware\SinhvienLoginMiddleware::class,
+        'logout' => \App\Http\Middleware\LogOut::class
 
     ];
 

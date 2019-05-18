@@ -41,4 +41,5 @@ class BangDiem extends Model
     	}
     	return $diem;
     }
+
 }

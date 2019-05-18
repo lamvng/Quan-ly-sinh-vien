@@ -18,7 +18,7 @@ class SinhvienLoginMiddleware
     public function handle($request, Closure $next)
     {
         if(Auth::check()) {
-            if(Auth::user()->chucVu == 'Sinh viên') {
+            if(Auth::user()->chucVu == 0) {
                 return $next($request);   
             }
             else {

@@ -12,4 +12,8 @@ class Vien extends Model
     public function hocphan() {
     	return $this->hasMany('App\HocPhan','maVien','maHocPhan');
     }
+
+    public function lopsv() {
+    	return $this->hasMany('App\LopSV','maVien','maLop');
+    }
 }
