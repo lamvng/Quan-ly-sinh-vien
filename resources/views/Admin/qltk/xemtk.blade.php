@@ -24,11 +24,11 @@
 		<div class="field-block-1">
 			<div class="text-field">
 				<p>Giới tính :</p>
-				<p>{{$user->gioiTinh}}</p>
+				<p>{{$user->getGioiTinh($user->gioiTinh)}}</p>
 			</div>
 			<div class="text-field">
 				<p>Chức vụ :</p>
-				<p>{{$user->chucVu}}</p>
+				<p>{{$user->getChucVu($user->chucVu)}}</p>
 			</div>
 			<div class="text-field">
 				<p>SĐT :</p>

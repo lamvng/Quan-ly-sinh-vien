@@ -29,8 +29,8 @@
 				<tr>
 					<td>{{$tk->hoTen}}</td>
 					<td>{{$tk->username}}</td>
-					<td>{{$tk->chucVu}}</td>
-					<td>{{$tk->gioiTinh}}</td>
+					<td>{{$tk->getChucVu($tk->chucVu)}}</td>
+					<td>{{$tk->getGioiTinh($tk->gioiTinh)}}</td>
 					<td>
 						<a href="admin\qltk\xemtk\{{$tk->username}}"><img src="frontend\image\view.png" style="height: : 35px;width: 25px;"></a> 
 					</td>

@@ -30,11 +30,15 @@
 			<div class="field-block-1">
 				<div class="text-field">
 					<p>Giới tính :</p>
-					<input type="text" value="{{$user->gioiTinh}}" name="gioiTinh">
+					<select name="gioiTinh" style="height: 26px; width: 204px;">
+						<option value='0' {{ ($user->gioiTinh == 0)?'selected':''}}>Nam</option>
+						<option value='1' {{ ($user->gioiTinh == 1)?'selected':''}}>Nữ</option>
+						<option value='2' {{ ($user->gioiTinh == 2)?'selected':''}}>Khác</option>
+					</select>
 				</div>
 				<div class="text-field">
 					<p>Chức vụ :</p>
-					<input type="text" value="{{$user->chucVu}}" name="chucVu" readonly="readonly">
+					<input type="text" value="{{$user->getChucVu($user->chucVu)}}" readonly="readonly">
 				</div>
 				<div class="text-field">
 					<p>Mật khẩu mới:</p>

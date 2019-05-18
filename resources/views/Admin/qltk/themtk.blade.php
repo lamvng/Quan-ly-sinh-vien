@@ -44,11 +44,19 @@
 			<div class="field-block-1">
 				<div class="text-field">
 					<p>Giới tính :</p>
-					<input type="text" value="" name="gioiTinh">
+					<select name="gioiTinh" style="height: 26px; width: 204px;">
+						<option value='0'>Nam</option>
+						<option value='1'>Nữ</option>
+						<option value='2'>Khác</option>
+					</select>
 				</div>
 				<div class="text-field">
 					<p>Chức vụ :</p>
-					<input type="text" value="" name="chucVu">
+					<select name="chucVu" style="height: 26px; width: 204px;">
+						<option value='0'>Sinh viên</option>
+						<option value='1'>Cán bộ</option>
+						<option value='2'>Admin</option>
+					</select>
 				</div>
 				<div class="text-field">
 					<p>Mật khẩu :</p>
