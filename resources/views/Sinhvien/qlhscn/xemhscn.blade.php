@@ -14,7 +14,7 @@
 		<div class="field-block-1">
 			<div class="text-field">
 				<p>Họ và tên :</p>
-				<p>Nguyễn An Khang</p>
+				<p>{{$sv->hoTen}}</p>
 			</div>
 			<div class="text-field">
 				<p>Bậc đào tạo :</p>
@@ -22,29 +22,29 @@
 			</div>
 			<div class="text-field">
 				<p>Chương trình :</p>
-				<p>KSCLC</p>
+				<p>{{$sv->sinhvien->lopsv->ctdaotao->tenCT}}</p>
 			</div>
 			<div class="text-field">
 				<p>Viện :</p>
-				<p>CNTT</p>
+				<p>{{$sv->sinhvien->lopsv->vien->tenVien}}</p>
 			</div>
 		</div>
 		<div class="field-block-1">
 			<div class="text-field">
 				<p>Giới tính :</p>
-				<p>Nam</p>
+				<p>{{$sv->getGioiTinh($sv->gioiTinh)}}</p>
 			</div>
 			<div class="text-field">
 				<p>Lớp :</p>
-				<p>HTTT&TT</p>
+				<p>{{$sv->sinhvien->lopsv->tenLop}}</p>
 			</div>
 			<div class="text-field">
 				<p>Khoá Học :</p>
-				<p>K60</p>
+				<p>{{$sv->sinhvien->lopsv->khoaHoc}}</p>
 			</div>
 			<div class="text-field">
 				<p>Email :</p>
-				<p>nguyenankhang1505@gmail.com</p>
+				<p>{{$sv->email}}</p>
 			</div>
 		</div>
 	</div>
@@ -54,37 +54,37 @@
 		<div class="field-block-1">
 			<div class="text-field">
 				<p>Dân tộc :</p>
-				<p>Kinh</p>
+				<p>{{$sv->sinhvien->ttcanhan->danToc}}</p>
 			</div>
 			<div class="text-field">
 				<p>Năm TN cấp 3 :</p>
-				<p>2015</p>
+				<p>{{$sv->sinhvien->ttcanhan->namTN}}</p>
 			</div>
 			<div class="text-field">
 				<p>Đại chỉ :</p>
-				<p>Số 41 ngõ 27 Đại Cồ Việt</p>
+				<p>{{$sv->sinhvien->ttcanhan->diaChi}}</p>
 			</div>
 			<div class="text-field">
 				<p>Số CMND :</p>
-				<p>187517382</p>
+				<p>{{$sv->sinhvien->ttcanhan->soCMND}}</p>
 			</div>
 		</div>
 		<div class="field-block-1">
 			<div class="text-field">
 				<p>Tôn giáo :</p>
-				<p>Không</p>
+				<p>{{$sv->sinhvien->ttcanhan->tonGiao}}</p>
 			</div>
 			<div class="text-field">
 				<p>Trường THPT :</p>
-				<p>THPT chuyên Đại học Vinh</p>
+				<p>{{$sv->sinhvien->ttcanhan->truongTHPT}}</p>
 			</div>
 			<div class="text-field">
 				<p>Hộ khẩu :</p>
-				<p>Nghệ An</p>
+				<p>{{$sv->sinhvien->ttcanhan->hoKhau}}</p>
 			</div>
 			<div class="text-field">
 				<p>Số điện thoại :</p>
-				<p>0373445086</p>
+				<p>{{$sv->sdt}}</p>
 			</div>
 		</div>
 	</div>
@@ -94,29 +94,29 @@
 		<div class="field-block-1">
 			<div class="text-field">
 				<p>Tổng kết học kỳ :</p>
-				<p>20171</p>
+				<p>2.98</p>
 			</div>
 			<div class="text-field">
 				<p>Điểm tích luỹ :</p>
-				<p>2.8</p>
+				<p></p>
 			</div>
 			<div class="text-field">
 				<p>Số TC nợ đăng ký :</p>
-				<p>2</p>
+				<p></p>
 			</div>
 		</div>
 		<div class="field-block-1">
 			<div class="text-field">
 				<p>Tín chỉ tích luỹ :</p>
-				<p>120</p>
+				<p></p>
 			</div>
 			<div class="text-field">
 				<p>Trình độ học vấn :</p>
-				<p>3</p>
+				<p></p>
 			</div>
 			<div class="text-field">
 				<p>Mức cảnh cáo :</p>
-				<p>M0</p>
+				<p></p>
 			</div>
 		</div>
 	</div>

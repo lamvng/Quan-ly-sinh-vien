@@ -4,18 +4,19 @@
 	<p class="title">Sửa hồ sơ cá nhân</p>
 	<p class="label">Thông tin sinh viên</p>
 	<form action="sinhvien\qlhscn\suahscn" method="POST">
+		<input type="hidden" name="_token" value ="{{csrf_token()}}">
 		<div class="student-infor">
 			<div class="field-block">
 				<a href="">
 					<img src="Frontend\Image\avatar.png" height="204" class="infor-image">
 				</a>
 				<p>MSSV :</p>
-				<p> 20151950</p>
+				<p> {{$sv->sinhvien->maSV}}</p>
 			</div>
 			<div class="field-block-1">
 				<div class="text-field">
 					<p>Họ và tên :</p>
-					<input type="text" value ="Nguyễn An Khang" name="">
+					<input type="text" value ="{{$sv->hoTen}}" name="hoTen">
 				</div>
 				<div class="text-field">
 					<p>Bậc đào tạo :</p>
@@ -23,29 +24,33 @@
 				</div>
 				<div class="text-field">
 					<p>Chương trình :</p>
-					<input type="text" value="KSCLC" name="" readonly="readonly">
+					<input type="text" value="{{$sv->sinhvien->lopsv->ctdaotao->tenCT}}" name="" readonly="readonly">
 				</div>
 				<div class="text-field">
 					<p>Viện :</p>
-					<input type="text" value="CNTT" name="" readonly="readonly">
+					<input type="text" value="{{$sv->sinhvien->lopsv->vien->tenVien}}" name="" readonly="readonly">
 				</div>
 			</div>
 			<div class="field-block-1">
-				<div class="text-field">
+				<div class="text-field"> 
 					<p>Giới tính :</p>
-					<input type="text" value="Nam" name="">
+					<select name="gioiTinh" style="height: 26px; width: 204px;">
+						<option value='0' {{ ($sv->gioiTinh == 0)?'selected':''}}>Nam</option>
+						<option value='1' {{ ($sv->gioiTinh == 1)?'selected':''}}>Nữ</option>
+						<option value='2' {{ ($sv->gioiTinh == 2)?'selected':''}}>Khác</option>
+					</select>
 				</div>
 				<div class="text-field">
 					<p>Lớp :</p>
-					<input type="text" value="HTTT&TT" name="" readonly="readonly">
+					<input type="text" value="{{$sv->sinhvien->lopsv->tenLop}}" name="" readonly="readonly">
 				</div>
 				<div class="text-field">
 					<p>Khoá Học :</p>
-					<input type="text" value="60" name="" readonly="readonly">
+					<input type="text" value="{{$sv->sinhvien->lopsv->khoahoc}}" name="" readonly="readonly">
 				</div>
 				<div class="text-field">
 					<p>Email :</p>
-					<input type="text" value="nguyenankhang1505@gmail.com" name="">
+					<input type="text" value="{{$sv->email}}" name="email">
 				</div>
 			</div>
 		</div>
@@ -55,37 +60,37 @@
 			<div class="field-block-1">
 				<div class="text-field">
 					<p>Dân tộc :</p>
-					<input type="text" value="Kinh" name="">
+					<input type="text" value="{{$sv->sinhvien->ttcanhan->danToc}}" name="danToc">
 				</div>
 				<div class="text-field">
 					<p>Năm TN cấp 3 :</p>
-					<input type="text" value="2015" name="">
+					<input type="text" value="{{$sv->sinhvien->ttcanhan->namTN}}" name="namTN">
 				</div>
 				<div class="text-field">
 					<p>Đại chỉ :</p>
-					<input type="text" value="Đại Cồ Việt" name="">
+					<input type="text" value="{{$sv->sinhvien->ttcanhan->diaChi}}" name="diaChi">
 				</div>
 				<div class="text-field">
 					<p>Số CMND :</p>
-					<input type="text" value="abcxyz" name="">
+					<input type="text" value="{{$sv->sinhvien->ttcanhan->soCMND}}" name="soCMND">
 				</div>
 			</div>
 			<div class="field-block-1">
 				<div class="text-field">
 					<p>Tôn giáo :</p>
-					<input type="text" value="Kinh" name="">
+					<input type="text" value="{{$sv->sinhvien->ttcanhan->tonGiao}}" name="tonGiao">
 				</div>
 				<div class="text-field">
 					<p>Trường THPT :</p>
-					<input type="text" value="THPT chuyên Đại học Vinh" name="">
+					<input type="text" value="{{$sv->sinhvien->ttcaNhan->truongTHPT}}" name="truongTHPT">
 				</div>
 				<div class="text-field">
 					<p>Hộ khẩu :</p>
-					<input type="text" value="Nghệ An" name="">
+					<input type="text" value="{{$sv->sinhvien->ttcanhan->hoKhau}}" name="hoKhau">
 				</div>
 				<div class="text-field">
 					<p>Số điện thoại :</p>
-					<input type="text" value="0373445086" name="">
+					<input type="text" value="{{$sv->sdt}}" name="sdt">
 				</div>
 			</div>
 		</div>

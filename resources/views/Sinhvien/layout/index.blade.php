@@ -11,7 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="frontend\sinhvien\qlhscn\suahscn.css">
 	<link rel="stylesheet" type="text/css" href="frontend\sinhvien\qlhscn\xemhscn.css">
 
-	<link rel="stylesheet" type="text/css" href="frontend\sinhvien\qltkcn\xemtkcn.css">
+	<link rel="stylesheet" type="text/css" href="frontend\sinhvien\qltkcn\xem_tkcn.css">
 	<link rel="stylesheet" type="text/css" href="frontend\sinhvien\qltkcn\suatkcn.css">
 
 	<link rel="stylesheet" type="text/css" href="frontend\sinhvien\xemdiem\xemdiem.css">

@@ -19,7 +19,7 @@
 			</nav>
 		</div>
 		<div class="dropdown">
-			<a href="\Frontend\Sinhvien\QLTKCN\XemTKCN.html">
+			<a href="sinhvien\qltkcn\xemtkcn\{{Auth::user()->username}}">
 				<button class="text-block">Quản lý tài khoản cá nhân</button>
 			</a>
 		</div>

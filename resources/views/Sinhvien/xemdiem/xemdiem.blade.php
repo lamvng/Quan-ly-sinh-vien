@@ -16,16 +16,18 @@
 			</tr>
 		</thead>
 		<tbody class="element">
-			<tr>
-				<td class="short">20151</td>
-				<td class="short">EV1014</td>
-				<td class="long">Phân tích & thiết kế hệ thống</td>
-				<td class="short">2</td>
-				<td class="short">85531</td>
-				<td class="short">9</td>
-				<td class="short">9</td>
-				<td class="short">B</td>
-			</tr>
+			@foreach($bd as $diem)
+				<tr>
+					<td class="short">{{$diem->lophoc->maHocKy}}</td>
+					<td class="short">{{$diem->lophoc->maHocPhan}}</td>
+					<td class="long">{{$diem->lophoc->hocphan->tenHocPhan}}</td>
+					<td class="short">{{$diem->lophoc->hocphan->soTC}}</td>
+					<td class="short">{{$diem->maLop}}</td>
+					<td class="short">{{$diem->diemQT}}</td>
+					<td class="short">{{$diem->diemCK}}</td>
+					<td class="short">{{$diem->diemChu}}</td>
+				</tr>
+			@endforeach
 		</tbody>
 	</table>
 	<hr>

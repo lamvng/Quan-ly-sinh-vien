@@ -7,37 +7,37 @@
 		<div class="field-block">
 			<div class="text-field">
 				<p>Học phần :</p>
-				<p class="detail">Phân tích thiết kế</p>
+				<p class="detail">{{$lophoc->hocphan->tenHocPhan}}</p>
 			</div>
 			<div class="text-field">
 				<p>Mã HP :</p>
-				<p class="detail">IT4416</p>
+				<p class="detail">{{$lophoc->hocphan->maHocPhan}}</p>
 			</div>
 			<div class="text-field">
 				<p>Chương trình :</p>
-				<p class="detail">KSCLC</p>
+				<p class="detail"></p>
 			</div>
 			<div class="text-field">
 				<p>Viện :</p>
-				<p class="detail">CNTT</p>
+				<p class="detail">{{$lophoc->hocphan->vien->tenVien}}</p>
 			</div>
 			<div class="text-field">
 				<p>Số lượng :</p>
-				<p class="detail">15/19</p>
+				<p class="detail">{{$sl}}/{{$lophoc->soLuong}}</p>
 			</div>
 		</div>
 		<div class="field-block">
 			<div class="text-field">
 				<p>Mã lớp :</p>
-				<p class="detail">10000</p>
+				<p class="detail">{{$lophoc->maLop}}</p>
 			</div>
 			<div class="text-field">
 				<p>Thời lượng :</p>
-				<p class="detail">15 tuần</p>
+				<p class="detail">{{$lophoc->hocphan->soTuan}}</p>
 			</div>
 			<div class="text-field">
 				<p>Thời gian :</p>
-				<p class="detail">12h30-16h00</p>
+				<p class="detail"></p>
 			</div>
 			<div class="text-field">
 				<p>Thứ	 :</p>
@@ -50,9 +50,14 @@
 		</div>
 	</div>
 	<div class="button">
-		<a href="sinhvien\qldkl\danglylop">
-			<button type="submit" class="regis-button">Đăng ký</button>
-		</a>
+		@if(!isset($diem_sv))
+			<form action="sinhvien\qldkl\dangkylop\{{$lophoc->maLop}}" method="POST">
+				<input type="hidden" name="_token" value ="{{csrf_token()}}">
+				<button type="submit" class="regis-button">Đăng ký</button>
+			</form>
+		@else
+			<button type="" class="regis-button">Đã đăng ký</button>
+		@endif
 	</div>
 </div>
 @endsection
