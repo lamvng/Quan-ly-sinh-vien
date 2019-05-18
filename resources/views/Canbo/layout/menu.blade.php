@@ -25,7 +25,7 @@
 					</nav>
 				</div>
 				<div class="dropdown">
-					<a href="canbo\qltkcn\xemtkcn">
+					<a href="canbo\qltkcn\xemtkcn\{{Auth::user()->username}}">
 						<button class="text-block">Quản lý tài khoản cá nhân</button>
 					</a>
 				</div>

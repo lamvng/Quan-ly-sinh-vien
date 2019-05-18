@@ -14,11 +14,11 @@
 	<link rel="stylesheet" type="text/css" href="frontend\canbo\qldkl\xem_lop.css">
 
 	<link rel="stylesheet" type="text/css" href="frontend\canbo\qlsv\sua_hs.css">
-	<link rel="stylesheet" type="text/css" href="frontend\canbo\qlsv\them_hs.css">
+	<link rel="stylesheet" type="text/css" href="frontend\canbo\qlsv\themhs.css">
 	<link rel="stylesheet" type="text/css" href="frontend\canbo\qlsv\xem_hs.css">
 
 	<link rel="stylesheet" type="text/css" href="frontend\canbo\qltkcn\xem_tkcn.css">
-	<link rel="stylesheet" type="text/css" href="frontend\canbo\qltkcn\sua_tkcn.css">
+	<link rel="stylesheet" type="text/css" href="frontend\canbo\qltkcn\suatkcn.css">
 
 
 

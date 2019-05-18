@@ -7,45 +7,54 @@
 		<div class="field-block">
 			<div class="text-field">
 				<p>Học phần :</p>
-				<p class="detail">Phân tích thiết kế</p>
+				<p class="detail" style="width: 270px;">{{$lophoc->hocphan->tenHocPhan}}</p>
 			</div>
-			<div class="text-field">
+			<div class="text-field" >
 				<p>Mã HP :</p>
-				<p class="detail">IT4416</p>
+				<p class="detail" style="width: 270px;">{{$lophoc->maHocPhan}}</p>
 			</div>
 			<div class="text-field">
 				<p>Chương trình :</p>
-				<p class="detail">KSCLC</p>
+				<p class="detail" style="width: 270px;"></p>
 			</div>
 			<div class="text-field">
 				<p>Viện :</p>
-				<p class="detail">CNTT</p>
+				<p class="detail" style="width: 270px;">{{$lophoc->hocphan->vien->tenVien}}</p>
 			</div>
 			<div class="text-field">
 				<p>Số lượng :</p>
-				<p class="detail">15/19</p>
+				<p class="detail" style="width: 270px;">{{$sl}}/{{$lophoc->soLuong}}</p>
 			</div>
 		</div>
-		<div class="field-block">
-			<div class="text-field">
-				<p>Mã lớp :</p>
-				<p class="detail">10000</p>
+		<div class="field-block" style="width: 500px;">
+			<div class="text-field"  style="margin-left: 150px;">
+				<p >Mã lớp :</p>
+				<p class="detail">{{$lophoc->maLop}}</p>
 			</div>
-			<div class="text-field">
+			<div class="text-field"  style="margin-left: 150px;">
 				<p>Thời lượng :</p>
-				<p class="detail">15 tuần</p>
+				<p class="detail">{{$lophoc->hocphan->soTuan}}</p>
 			</div>
-			<div class="text-field">
+			<div class="text-field"  style="margin-left: 150px;">
 				<p>Thời gian :</p>
-				<p class="detail">12h30-16h00</p>
+				<p class="detail">
+					@foreach($lich as $l)
+						{{-- {{var_dump($l)}} --}}
+						{{$l->tietDau}} - {{$l->tietCuoi}}
+					@endforeach
+				</p>
 			</div>
-			<div class="text-field">
-				<p>Thứ	 :</p>
-				<p class="detail">5</p>
+			<div class="text-field"  style="margin-left: 150px;">
+				<p>Thứ :</p>
+				<p class="detail">
+					@foreach($lich as $l)
+						{{$l->thu}}
+					@endforeach
+				</p>
 			</div>
-			<div class="text-field">
+			<div class="text-field"  style="margin-left: 150px;">
 				<p>Phòng học :</p>
-				<p class="detail">D6-205</p>
+				{{-- <p class="detail">{{$lophoc->lichhoc->maPhong}}</p> --}}
 			</div>
 		</div>
 	</div>
